@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer myComponents {
+	.invalid {
+		@apply outline-strawberryRed outline-2 outline;
+	}
+
+	aside li span.active {
+		@apply bg-pastelBlue text-marineBlue !border-pastelBlue;
+	}
+
+	.active {
+		@apply bg-alabaster !border-purplishBlue;
+	}
+}
