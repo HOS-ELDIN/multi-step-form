@@ -25,7 +25,9 @@
 		class="font-serif bg-magnolia min-h-screen flex flex-col md:justify-center items-center"
 	>
 		<div class="relative min-h-screen md:min-h-0 md:static container mx-auto">
-			<div class="md:p-4 md:rounded-3xl md:bg-white md:flex md:w-fit mx-auto">
+			<div
+				class="md:p-4 md:rounded-3xl md:bg-white md:flex md:max-w-fit mx-auto"
+			>
 				<!-- Sidebar start -->
 				<aside
 					class="border bg-mobile md:bg-desk bg-no-repeat bg-cover bg-bottom md:basis-[276px] shrink-0 md:min-h-[570p] min-h-[150px] p-10 text-white font-bold uppercase md:rounded-xl overflow-hidden"
@@ -33,7 +35,7 @@
 					<ul class="flex justify-center gap-4 md:flex-col md:gap-8">
 						<li class="flex gap-5 items-center">
 							<span
-								class="border border-white rounded-full w-8 aspect-square flex justify-center items-center active"
+								class="step-one border border-white rounded-full w-8 aspect-square flex justify-center items-center active"
 								>1</span
 							>
 							<div class="hidden md:flex flex-col">
@@ -43,7 +45,7 @@
 						</li>
 						<li class="flex gap-5 items-center">
 							<span
-								class="border border-white rounded-full w-8 aspect-square flex justify-center items-center"
+								class="step-two border border-white rounded-full w-8 aspect-square flex justify-center items-center"
 								>2</span
 							>
 							<div class="hidden md:flex flex-col">
@@ -53,7 +55,7 @@
 						</li>
 						<li class="flex gap-5 items-center">
 							<span
-								class="border border-white rounded-full w-8 aspect-square flex justify-center items-center"
+								class="step-three border border-white rounded-full w-8 aspect-square flex justify-center items-center"
 								>3</span
 							>
 							<div class="hidden md:flex flex-col">
@@ -63,7 +65,7 @@
 						</li>
 						<li class="flex gap-5 items-center">
 							<span
-								class="border border-white rounded-full w-8 aspect-square flex justify-center items-center"
+								class="step-four border border-white rounded-full w-8 aspect-square flex justify-center items-center"
 								>4</span
 							>
 							<div class="hidden md:flex flex-col">
@@ -76,60 +78,65 @@
 				<!-- Sidebar end -->
 
 				<main
-					class="rounded-xl -mt-14 md:mt-0 mb-32 md:mb-0 bg-white mx-5 px-5 py-7 lg:mx-16 md:w-[530px] md:h-[35rem] md:relative shrink-0"
+					class="rounded-xl -mt-14 md:mt-0 mb-24 md:mb-0 bg-white mx-5 px-5 py-7 lg:mx-16 md:w-[530px] md:h-[35rem] md:relative"
 				>
 					<!-- Step 1 start -->
-					<section class="mx-auto hidden">
-						<h1 class="text-4xl text-marineBlue font-bold mb-3">
+					<section class="one mx-auto">
+						<h1 class="text-3xl md:text-4xl text-marineBlue font-bold mb-3">
 							Personal info
 						</h1>
 						<p class="text-coolGray">
 							Please provide your name, email address, and phone number.
 						</p>
 						<form class="mt-6 text-marineBlue">
-							<div class="flex justify-between">
+							<div class="flex justify-between items-center">
 								<label class="font-semibold" for="name">Name</label>
-								<span class="hidden text-strawberryRed font-bold capitalize"
+								<span
+									class="error text-xs md:text-base hidden text-strawberryRed font-bold capitalize"
 									>error</span
 								>
 							</div>
 							<input
-								class="block mb-5 border border-lightGray p-3 rounded-lg w-full mt-2 focus:outline-purplishBlue"
+								class="block mb-5 border border-lightGray p-3 rounded-lg w-full mt-2 focus:outline-purplishBlue required:outline-strawberryRed required:outline outline-2 checked:outline-green-600"
 								type="text"
 								id="name"
 								placeholder="e.g. Stephen King"
 							/>
-							<div class="flex justify-between">
+							<div class="flex justify-between items-center">
 								<label class="font-semibold" for="mail">Email Address</label>
-								<span class="hidden text-strawberryRed font-bold capitalize"
-									>this field is requried</span
-								>
-							</div>
-							<input
-								class="block mb-5 border border-lightGray p-3 rounded-lg w-full mt-2 focus:outline-purplishBlue"
-								type="email"
-								id="mail"
-								placeholder="e.g. stephenking@lorem.com"
-							/>
-							<div class="flex justify-between">
-								<label class="font-semibold" for="phone">Phone Number</label>
-								<span class="hidden text-strawberryRed font-bold capitalize"
+								<span
+									class="error text-xs md:text-base hidden text-strawberryRed font-bold capitalize"
 									>error</span
 								>
 							</div>
 							<input
-								class="block mb-5 border border-lightGray p-3 rounded-lg w-full mt-2 focus:outline-purplishBlue invalid:outline-strawberryRed"
+								class="block mb-5 border border-lightGray p-3 rounded-lg w-full mt-2 focus:outline-purplishBlue required:outline-strawberryRed required:outline outline-2"
+								type="email"
+								id="mail"
+								placeholder="e.g. stephenking@lorem.com"
+							/>
+							<div class="flex justify-between items-center">
+								<label class="font-semibold" for="phone">Phone Number</label>
+								<span
+									class="error text-xs md:text-base hidden text-strawberryRed font-bold capitalize"
+									>error</span
+								>
+							</div>
+							<input
+								class="block mb-5 border border-lightGray p-3 rounded-lg w-full mt-2 focus:outline-purplishBlue required:outline-strawberryRed required:outline outline-2 checked:outline-green-600"
 								type="number"
 								id="phone"
 								placeholder="e.g. +1 234 567 890"
+								maxlength="10"
 							/>
 						</form>
+						<!-- maxlength="10" -->
 					</section>
 					<!-- Step 1 end -->
 
 					<!-- Step 2 start -->
-					<section class="mx-auto hidden">
-						<h1 class="text-4xl text-marineBlue font-bold mb-3">
+					<section class="two mx-auto hidden">
+						<h1 class="text-3xl md:text-4xl text-marineBlue font-bold mb-3">
 							Select your plan
 						</h1>
 						<p class="text-coolGray">
@@ -138,44 +145,72 @@
 						<div class="holder grid gap-3 md:gap-5 md:grid-cols-3 mt-3 md:mt-9">
 							<div
 								class="card active flex gap-5 items-start md:block border-2 hover:border-purplishBlue cursor-pointer rounded-xl p-5 text-left"
+								data-plan="Arcade"
 							>
 								<img src="images/icon-arcade.svg" alt="" />
 								<div class="info md:mt-10">
 									<h3 class="text-marineBlue font-bold">Arcade</h3>
-									<span class="text-coolGray block">$9/mo</span>
-									<span class="hidden text-marineBlue">2 months free</span>
+									<span class="text-coolGray block"
+										>$<span class="arcade price">9</span>/<span class="mo-yr"
+											>mo</span
+										></span
+									>
+									<span class="extra text-sm hidden text-marineBlue"
+										>2 months free</span
+									>
 								</div>
 							</div>
 
 							<div
 								class="card flex gap-5 items-start md:block border-2 hover:border-purplishBlue cursor-pointer rounded-xl p-5 text-left"
+								data-plan="Advanced"
 							>
 								<img src="images/icon-advanced.svg" alt="" />
 								<div class="info md:mt-10">
 									<h3 class="text-marineBlue font-bold">Advanced</h3>
-									<span class="text-coolGray block">$12/mo</span>
-									<span class="hidden text-marineBlue">2 months free</span>
+									<span class="text-coolGray block"
+										>$<span class="advanced price">12</span>/<span class="mo-yr"
+											>mo</span
+										></span
+									>
+									<span class="extra text-sm hidden text-marineBlue"
+										>2 months free</span
+									>
 								</div>
 							</div>
 
 							<div
 								class="card flex gap-5 items-start md:block border-2 hover:border-purplishBlue cursor-pointer rounded-xl p-5 text-left"
+								data-plan="Pro"
 							>
 								<img src="images/icon-pro.svg" alt="" />
 								<div class="info md:mt-10">
 									<h3 class="text-marineBlue font-bold">Pro</h3>
-									<span class="text-coolGray block">$15/mo</span>
-									<span class="hidden text-marineBlue">2 months free</span>
+									<span class="text-coolGray block"
+										>$<span class="pro price">15</span>/<span class="mo-yr"
+											>mo</span
+										></span
+									>
+									<span class="extra text-sm hidden text-marineBlue"
+										>2 months free</span
+									>
 								</div>
 							</div>
 						</div>
 
-						<div class="toggle bg-alabaster rounded-lg mt-8 p-5 text-center">
+						<div
+							class="toggle bg-alabaster rounded-lg mt-4 md:mt-8 p-5 text-center"
+						>
 							<label class="inline-flex items-center cursor-pointer">
-								<input type="checkbox" value="" class="sr-only peer" />
+								<input
+									id="interval-toggle"
+									type="checkbox"
+									value="yearly"
+									class="sr-only peer"
+								/>
 								<span
 									class="text-marineBlue font-semibold peer peer-checked:text-coolGray"
-									>monthly</span
+									>Monthly</span
 								>
 
 								<div
@@ -191,8 +226,8 @@
 					<!-- Step 2 end -->
 
 					<!-- Step 3 start -->
-					<section class="mx-auto">
-						<h1 class="text-4xl text-marineBlue font-bold mb-3">
+					<section class="three mx-auto hidden">
+						<h1 class="text-3xl md:text-4xl text-marineBlue font-bold mb-3">
 							Pick add-ons
 						</h1>
 						<p class="text-coolGray">
@@ -202,14 +237,13 @@
 						<div class="holder mt-3 md:mt-9">
 							<label
 								for="online"
-								class="active px-3 md:px-5 py-3 mb-3 border-2 hover:border-purplishBlue cursor-pointer rounded-xl flex items-center gap-3 md:gap-5"
+								class="px-3 md:px-5 py-3 mb-3 border-2 hover:border-purplishBlue cursor-pointer rounded-xl flex items-center gap-3 md:gap-5"
 							>
 								<input
 									class="peer appearance-none absolute"
 									type="checkbox"
 									name=""
 									id="online"
-									checked
 								/>
 								<span
 									class="block relative peer peer-checked:bg-purplishBlue peer-checked:after:block peer-checked:border-transparent w-5 aspect-square rounded-md border-2 after:content-['\2713'] after:hidden after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:text-white text-xs"
@@ -224,21 +258,22 @@
 									</div>
 									<span
 										class="text-purplishBlue tracking-tighter text-xs md:text-base"
-										>+$1/mo</span
+										>+$<span class="online price">1</span>/<span class="mo-yr"
+											>mo</span
+										></span
 									>
 								</div>
 							</label>
 
 							<label
 								for="storage"
-								class="active px-3 md:px-5 py-3 mb-3 border-2 hover:border-purplishBlue cursor-pointer rounded-xl flex items-center gap-3 md:gap-5"
+								class="px-3 md:px-5 py-3 mb-3 border-2 hover:border-purplishBlue cursor-pointer rounded-xl flex items-center gap-3 md:gap-5"
 							>
 								<input
 									class="peer appearance-none absolute"
 									type="checkbox"
 									name=""
 									id="storage"
-									checked
 								/>
 								<span
 									class="block relative peer peer-checked:bg-purplishBlue peer-checked:after:block peer-checked:border-transparent w-5 aspect-square rounded-md border-2 after:content-['\2713'] after:hidden after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:text-white text-xs"
@@ -253,14 +288,16 @@
 									</div>
 									<span
 										class="text-purplishBlue tracking-tighter text-xs md:text-base"
-										>+$2/mo</span
+										>+$<span class="storage price">2</span>/<span class="mo-yr"
+											>mo</span
+										></span
 									>
 								</div>
 							</label>
 
 							<label
 								for="profile"
-								class="px-3 py-3 border-2 hover:border-purplishBlue cursor-pointer rounded-xl flex items-center gap-3 md:gap-5"
+								class="px-3 md:px-5 py-3 border-2 hover:border-purplishBlue cursor-pointer rounded-xl flex items-center gap-3 md:gap-5"
 							>
 								<input
 									class="peer appearance-none absolute"
@@ -283,7 +320,9 @@
 									</div>
 									<span
 										class="text-purplishBlue tracking-tighter text-xs md:text-base"
-										>+$2/mo</span
+										>+$<span class="profile price">2</span>/<span class="mo-yr"
+											>mo</span
+										></span
 									>
 								</div>
 							</label>
@@ -292,34 +331,108 @@
 					<!-- Step 3 end -->
 
 					<!-- Step 4 start -->
-
-					<!-- Finishing up Double-check everything looks OK before confirming. -->
-
 					<!-- Dynamically add subscription and add-on selections here -->
+					<!-- change button text to confirm  -->
+					<section class="four mx-auto hidden">
+						<h1 class="text-3xl md:text-4xl text-marineBlue font-bold mb-3">
+							Finishing up
+						</h1>
+						<p class="text-coolGray">
+							Double-check everything looks OK before confirming.
+						</p>
+						<div
+							class="result bg-alabaster rounded-lg p-5 flex flex-col gap-5 mt-3 md:mt-9"
+						>
+							<div
+								class="flex justify-between items-center border-b border-lightGray pb-5"
+							>
+								<div>
+									<h3 class="text-lg md:text-xl font-bold text-marineBlue">
+										<span class="plan-name"></span> (<span
+											class="monthly-yearly"
+											>monthly</span
+										>)
+									</h3>
+									<span
+										class="change-button text-coolGray underline cursor-pointer hover:text-purplishBlue"
+										>Change</span
+									>
+								</div>
+								<span class="text-marineBlue font-bold"
+									>$<span class="plan-price"></span>/<span class="mo-yr"
+										>mo</span
+									></span
+								>
+							</div>
 
-					<!-- Total (per month/year) Go Back Confirm -->
+							<div class="summary-add-on flex justify-between">
+								<h3 class="text-coolGray">Online service</h3>
 
+								<span class="text-marineBlue font-semibold text-sm"
+									>+$<span class="summary-addon-price">1</span>/<span
+										class="mo-yr"
+										>mo</span
+									></span
+								>
+							</div>
+							<div class="summary-add-on flex justify-between">
+								<h3 class="text-coolGray">Larger storage</h3>
+
+								<span class="text-marineBlue font-semibold text-sm"
+									>+$<span class="summary-addon-price">2</span>/<span
+										class="mo-yr"
+										>mo</span
+									></span
+								>
+							</div>
+							<div class="summary-add-on flex justify-between">
+								<h3 class="text-coolGray">Customizable profile</h3>
+
+								<span class="text-marineBlue font-semibold text-sm"
+									>+$<span class="summary-addon-price">2</span>/<span
+										class="mo-yr"
+										>mo</span
+									></span
+								>
+							</div>
+						</div>
+
+						<div class="total flex justify-between p-5">
+							<h3 class="text-coolGray">
+								Total (per <span class="month-year">mounth</span>)
+							</h3>
+							<span class="text-purplishBlue font-bold text-xl"
+								>$<span class="total-price">0</span>/<span class="mo-yr"
+									>mo</span
+								></span
+							>
+						</div>
+					</section>
 					<!-- Step 4 end -->
 
 					<!-- Step 5 start -->
-
-					<!-- Thank you! Thanks for confirming your subscription! We hope you have
-					fun using our platform. If you ever need support, please feel free to
-					email us at support@loremgaming.com. -->
-
+					<!-- remove button here  -->
+					<section
+						class="finish hidden flex mx-auto text-center my-12 md:my-0 flex-col gap-5 justify-center items-center h-full"
+					>
+						<img src="images/icon-thank-you.svg" alt="" />
+						<h2 class="text-marineBlue text-3xl font-bold">Thank you!</h2>
+						<p class="text-coolGray">
+							Thanks for confirming your subscription! We hope you have fun
+							using our platform. If you ever need support, please feel free to
+							email us at support@loremgaming.com.
+						</p>
+					</section>
 					<!-- Step 5 end -->
-					<!-- fixed 
-					bottom-0 
-					right-1/2 translate-x-1/2  -->
 					<div
-						class="absolute bottom-0 right-1/2 translate-x-1/2 md:absolute md:right-0 md:bottom-0 md:translate-x-0 p-5 md:p-0 bg-white w-full max-w-[500px] flex justify-between items-center"
+						class="flex absolute bottom-0 right-1/2 translate-x-1/2 md:absolute md:right-0 md:bottom-0 md:translate-x-0 p-5 md:p-0 bg-white w-full justify-between items-center md:mb-3"
 					>
 						<span
-							class="font-semibold text-coolGray hover:text-marineBlue cursor-pointer"
+							class="go-back hidden font-semibold text-coolGray hover:text-marineBlue cursor-pointer"
 							>Go Back</span
 						>
 						<button
-							class="px-4 py-2 text-white bg-marineBlue rounded-lg mb-3 block"
+							class="next w-28 py-2.5 text-white bg-marineBlue rounded-lg block ml-auto hover:opacity-90 text-sm"
 						>
 							Next Step
 						</button>

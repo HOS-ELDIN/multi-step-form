@@ -14,4 +14,23 @@
 	.active {
 		@apply bg-alabaster !border-purplishBlue;
 	}
+
+	.confirm {
+		@apply !bg-purplishBlue;
+	}
+
+	input[type="number"] {
+		appearance: textfield;
+		-moz-appearance: textfield;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
+	.good {
+		@apply outline-green-600 outline
+	}
+	.error.valid {
+		@apply !text-green-600
+	}
 }
